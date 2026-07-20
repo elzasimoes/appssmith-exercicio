@@ -1,0 +1,3 @@
+SELECT * FROM historico_interacoes
+WHERE lead_id = {{table_leads.selectedRow?.id || null}}
+ORDER BY data_interacao DESC;

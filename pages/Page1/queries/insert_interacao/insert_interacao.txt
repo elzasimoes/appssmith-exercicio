@@ -1,0 +1,7 @@
+INSERT INTO historico_interacoes (lead_id, vendedor_responsavel, notas, data_interacao) 
+VALUES (
+    {{table_leads.selectedRow.id}}, 
+    'Vendedor', 
+    {{inp_notas.text}}, 
+    NOW()
+);

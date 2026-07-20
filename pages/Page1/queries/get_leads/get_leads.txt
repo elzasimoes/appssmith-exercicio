@@ -1,0 +1,5 @@
+SELECT * FROM public."leads"
+WHERE (nome ILIKE '%' || {{table_leads.searchText || ''}} || '%' OR empresa ILIKE '%' || {{table_leads.searchText || ''}} || '%')
+AND ({{sel_status.selectedOptionValue || ''}} = '' OR status = {{sel_status.selectedOptionValue}})
+ORDER BY id
+LIMIT {{table_leads.pageSize || 10}} OFFSET {{table_leads.pageOffset || 0}};
